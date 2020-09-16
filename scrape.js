@@ -1,6 +1,7 @@
 const { Octokit } = require("@octokit/rest");
-const { ReadmeBox } = require("readme-box");
-
+// const { ReadmeBox } = require("readme-box");
+require('dotenv').config() // for local .env files
+const fs = require('fs')
 const ISSUE_NUMBER = 1; // TODO: take env var
 const issuedetails = {
   owner: process.env.GITHUB_REPOSITORY_OWNER,
@@ -13,19 +14,23 @@ const issuedetails = {
 console.log({issuedetails})
 const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 (async function main() {
-  const data = await getData();
+  const data = await getData(); // uses issuedetails
+  let readme = fs.readFileSync('README.md', 'utf-8')
   try {
     const images = await generateImages(data);
-    await ReadmeBox.updateSection(images, {
-      ...issuedetails,
-      section: "signed-people",
-    });
+    readme = replaceSection({
+      sectionName:"signed-people",
+      readme,
+      newContents: images
+    })
     const reasons = await generateReasons(data);
-    await ReadmeBox.updateSection(reasons, {
-      ...issuedetails,
-      section: "sign-reasons",
-    });
+    readme = replaceSection({
+      sectionName:"sign-reasons",
+      readme,
+      newContents: reasons
+    })
     console.log({images, reasons})
+    fs.writeFileSync('README.md', readme)
   } catch (err) {
     console.error(err);
   }
@@ -41,7 +46,7 @@ const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 function generateReasons(data) {
   const renderedList = data.comments.slice(0,5)
     .map(
-      (comment) => `"${comment.body}" *- ${user.login}* <img src=${comment.user.avatar_url}&s=20 height=20 />`
+      (comment) => `"${comment.body}" *- ${comment.user.login}* <img src=${comment.user.avatar_url}&s=20 height=20 />`
     )
     .join("\n");
   return renderedList;
@@ -63,4 +68,16 @@ async function getData() {
     reactions: reactions.data,
     comments: comments.data,
   };
+}
+
+function replaceSection({
+  sectionName,
+  readme,
+  newContents
+}) {
+const START_COMMENT = `<!--START_SECTION:${sectionName}-->`;
+const END_COMMENT = `<!--END_SECTION:${sectionName}-->`;
+const listReg = new RegExp(`${START_COMMENT}[\\s\\S]+${END_COMMENT}`);
+// let oldFences = listReg.exec(readme)
+return readme.replace(listReg, START_COMMENT + '\n' + newContents + '\n' + END_COMMENT);
 }

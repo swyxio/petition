@@ -13,13 +13,13 @@ We, the undersigned: ____
 > Example: we want a way to have petitions on github
 
 <!--START_SECTION:signed-people-->
-to be filled
+<img src=https://avatars2.githubusercontent.com/u/6764957?u=97ad815028595b73b06ee4b0510e66bbe391228d&v=4&s=20 height=20 />
 <!--END_SECTION:signed-people-->
 
 ## Reasons for Signing
 
 <!--START_SECTION:sign-reasons-->
-to be filled
+"sample comment here" *- sw-yx*  <img src=https://avatars1.githubusercontent.com/u/6764957?v=4&s=20 height=20 />
 <!--END_SECTION:sign-reasons-->
 
 ## Updates

@@ -16,6 +16,7 @@
   "homepage": "https://github.com/sw-yx/petition#readme",
   "dependencies": {
     "@octokit/rest": "^18.0.6",
+    "dotenv": "^8.2.0",
     "readme-box": "^0.1.2"
   }
 }
