@@ -1,7 +1,7 @@
 const { Octokit } = require("@octokit/rest");
 // const { ReadmeBox } = require("readme-box");
 require('dotenv').config() // for local .env files
-const fs = require('fs')
+// const fs = require('fs')
 const ISSUE_NUMBER = 1; // TODO: take env var
 const issuedetails = {
   owner: process.env.GITHUB_REPOSITORY_OWNER,
@@ -11,7 +11,6 @@ const issuedetails = {
   token: process.env.ENV_GITHUB_TOKEN,
 };
 
-console.log({issuedetails})
 const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 (async function main() {
   const data = await getData(); // uses issuedetails
@@ -37,7 +36,7 @@ const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
     // fs.writeFileSync('README.md', readme)
 
     await octokit.repos.createOrUpdateFileContents({
-      ...REPO_DETAILS,
+      ...issuedetails,
       content: Buffer.from(readme).toString("base64"),
       path: "README.md",
       message: `petitionaction ${new Date().toISOString()}`,
@@ -58,7 +57,7 @@ const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 
 
 async function getReadme(octokit) {
-  const res = await octokit.repos.getReadme(REPO_DETAILS);
+  const res = await octokit.repos.getReadme(issuedetails);
   const encoded = res.data.content;
   const decoded = Buffer.from(encoded, "base64").toString("utf8");
   return {
