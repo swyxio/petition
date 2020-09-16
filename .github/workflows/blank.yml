@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
     - uses: franzdiebold/github-env-vars-action@v1.0.0
       # https://github.com/marketplace/actions/github-environment-variables-action
     - name: Use Node.js
