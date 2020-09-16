@@ -46,7 +46,7 @@ const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 function generateReasons(data) {
   const renderedList = data.comments.slice(0,5)
     .map(
-      (comment) => `"${comment.body}" *- ${comment.user.login}* <img src=${comment.user.avatar_url}&s=20 height=20 />`
+      (comment) => `"${comment.body}" *- ${comment.user.login}* <img src="${comment.user.avatar_url}&s=20" height=20 />`
     )
     .join("\n");
   return renderedList;
@@ -55,7 +55,7 @@ function generateReasons(data) {
 function generateImages(data) {
   const renderedList = data.reactions
     .map(
-      (reaction) => `<img src=${reaction.user.avatar_url}&s=20 height=20 />` // use github image api s=20 to size smaller
+      (reaction) => `${reaction.user.login}<img src="${reaction.user.avatar_url}&s=20" height=20 />` // use github image api s=20 to size smaller
     )
     .join("\n");
   return renderedList; 
