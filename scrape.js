@@ -25,6 +25,7 @@ const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
       ...issuedetails,
       section: "sign-reasons",
     });
+    console.log({images, reasons})
   } catch (err) {
     console.error(err);
   }
