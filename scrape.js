@@ -10,6 +10,7 @@ const issuedetails = {
   token: process.env.ENV_GITHUB_TOKEN,
 };
 
+console.log({issuedetails})
 const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 (async function main() {
   const data = await getData();
