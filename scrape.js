@@ -5,6 +5,7 @@ const ISSUE_NUMBER = 1; // TODO: take env var
 const issuedetails = {
   owner: process.env.GITHUB_REPOSITORY_OWNER,
   repo: process.env.GITHUB_REPOSITORY_NAME,
+  branch: process.env.GITHUB_REF_NAME,
   issue_number: ISSUE_NUMBER,
   token: process.env.ENV_GITHUB_TOKEN,
 };
