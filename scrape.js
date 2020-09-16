@@ -1,12 +1,10 @@
 const { Octokit } = require("@octokit/rest");
 const { ReadmeBox } = require("readme-box");
 
-const GITHUB_REPO = "petition"; // TODO: take env var
-const GITHUB_OWNER = "sw-yx"; // TODO: take env var
 const ISSUE_NUMBER = 1; // TODO: take env var
 const issuedetails = {
-  owner: GITHUB_OWNER,
-  repo: GITHUB_REPO,
+  owner: process.env.GITHUB_REPOSITORY_OWNER,
+  repo: process.env.GITHUB_REPOSITORY_NAME,
   issue_number: ISSUE_NUMBER,
   token: process.env.ENV_GITHUB_TOKEN,
 };

@@ -19,6 +19,7 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v1
     - run: npm ci
-    - run: npm run scrape --if-present
-      env:
+    - run: node scrape.js
+      env: 
           ENV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # the rest of the process.env vars provided by github-env-vars-action

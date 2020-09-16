@@ -1,11 +1,8 @@
 {
   "name": "petition",
+  "private": "true",
   "version": "1.0.0",
   "description": "> **GitHub Petition Template** > > This is a template for GitHub based petitions. This is like change.org, except that it's more obviously for developers, with a built in issue discussion system.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sw-yx/petition.git"
