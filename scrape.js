@@ -8,10 +8,10 @@ const issuedetails = {
   owner: GITHUB_OWNER,
   repo: GITHUB_REPO,
   issue_number: ISSUE_NUMBER,
-  token: process.env.GITHUB_TOKEN,
+  token: process.env.ENV_GITHUB_TOKEN,
 };
 
-const octokit = new Octokit({ auth: `token ${process.env.GITHUB_TOKEN}` });
+const octokit = new Octokit({ auth: `token ${process.env.ENV_GITHUB_TOKEN}` });
 (async function main() {
   const data = await getData();
   try {
