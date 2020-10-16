@@ -15,12 +15,14 @@ We, the undersigned: ____
 <!--START_SECTION:signed-people-->
 sw-yx<img src="https://avatars2.githubusercontent.com/u/6764957?u=97ad815028595b73b06ee4b0510e66bbe391228d&v=4&s=20" height=20 />
 mcansh<img src="https://avatars2.githubusercontent.com/u/11698668?u=14a201dea37b6bdabaccd76ff4e2664b8e337052&v=4&s=20" height=20 />
+nm17<img src="https://avatars2.githubusercontent.com/u/23419131?u=9006ad683ce027e39e5b0b0fc47f6812cb3148c3&v=4&s=20" height=20 />
 <!--END_SECTION:signed-people-->
 
 ## Reasons for Signing
 
 <!--START_SECTION:sign-reasons-->
 "sample comment here" *- sw-yx* <img src="https://avatars1.githubusercontent.com/u/6764957?v=4&s=20" height=20 />
+"Cool idea" *- nm17* <img src="https://avatars2.githubusercontent.com/u/23419131?v=4&s=20" height=20 />
 <!--END_SECTION:sign-reasons-->
 
 ## Updates
