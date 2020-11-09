@@ -16,6 +16,7 @@ We, the undersigned: ____
 sw-yx<img src="https://avatars2.githubusercontent.com/u/6764957?u=97ad815028595b73b06ee4b0510e66bbe391228d&v=4&s=20" height=20 />
 mcansh<img src="https://avatars2.githubusercontent.com/u/11698668?u=14a201dea37b6bdabaccd76ff4e2664b8e337052&v=4&s=20" height=20 />
 nm17<img src="https://avatars2.githubusercontent.com/u/23419131?u=9006ad683ce027e39e5b0b0fc47f6812cb3148c3&v=4&s=20" height=20 />
+wei<img src="https://avatars3.githubusercontent.com/u/5880908?u=3d1de2a5d76b7b64b82bc7c4e1b0e960bae2b388&v=4&s=20" height=20 />
 <!--END_SECTION:signed-people-->
 
 ## Reasons for Signing
